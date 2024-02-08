@@ -23,4 +23,16 @@ class Square:
         return (self.length_side * 4)
 
 
+class Rectangle:
+    def __init__(self, length, width):
+        self.width = width
+        self.length = length
+
+    def find_S(self):
+        return (self.width * self.length)
+
+    def find_P(self):
+        return (self.width * 2 + self.length * 2)
+
+
 
