@@ -19,3 +19,8 @@ class Rectangle:
     
     def find_P(self) -> float:
         return (self.first_side_length + self.second_side_length) * 2
+    
+
+class Circle:
+    def __init__(self, radius_length: float) -> None:
+        self.radius_length = radius_length
