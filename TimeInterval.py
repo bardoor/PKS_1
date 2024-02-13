@@ -57,3 +57,6 @@ class TimeInterval:
     
     def get_time_interval_in_hours(self) -> float:
         return self.seconds / 3600
+    
+    def get_time_interval_in_days(self) -> float:
+        return self.seconds / 86400
