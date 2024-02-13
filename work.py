@@ -19,4 +19,8 @@ class Rectangle:
 
     def area(self):
         return f"площадь прямоугольника равна: {self.side1 * self.side2}"
+    
+    def perimetr(self):
+        return f"площадь прямоугольника равна: {self.side1 * 2 + self.side2 * 2}"
+
 
