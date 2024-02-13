@@ -35,3 +35,13 @@ class TimeInterval:
         if self.seconds > other.seconds:
             return True
         return False
+    
+    def __le__(self, other) -> bool:
+        if self.seconds <= other.seconds:
+            return True
+        return False
+
+    def __ge__(self, other) -> bool:
+        if self.seconds >= other.seconds:
+            return True
+        return False
