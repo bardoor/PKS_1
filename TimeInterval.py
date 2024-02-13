@@ -25,3 +25,13 @@ class TimeInterval:
         if self.seconds != other.seconds:
             return True
         return False
+    
+    def __lt__(self, other) -> bool:
+        if self.seconds < other.seconds:
+            return True
+        return False
+
+    def __gt__(self, other) -> bool:
+        if self.seconds > other.seconds:
+            return True
+        return False
