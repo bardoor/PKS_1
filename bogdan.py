@@ -21,3 +21,14 @@ class Rectangle: # Прямоугольник
 
     def find_perimeter(self):
         return self.width * 2 + self.height * 2
+
+
+class Circle:  # Круг
+    def __init__(self, radius: float):
+        self.radius = radius
+
+    def find_square(self) -> float:
+        return math.pi * self.radius ** 2
+
+    def find_perimeter(self) -> float:
+        return 2 * math.pi * self.radius
