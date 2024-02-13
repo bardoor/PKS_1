@@ -9,3 +9,9 @@ class TimeInterval:
 
     def __sub__(self, other):
         return TimeInterval(self.seconds - other.seconds)
+    
+    def __str__(self) -> str:
+        hours = self.seconds // 3600
+        minutes = (self.seconds - hours * 3600) // 60
+        seconds = self.seconds - hours * 3600 - minutes * 60
+        return f"В данном промежутке времени есть {hours} часов, {minutes} минут, {seconds} секунд"
