@@ -17,3 +17,6 @@ class Rectangle:
         self.side1 = side1
         self.side2 = side2
 
+    def area(self):
+        return f"площадь прямоугольника равна: {self.side1 * self.side2}"
+
