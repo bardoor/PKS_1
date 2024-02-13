@@ -22,5 +22,9 @@ class Rectangle:
     
     def perimetr(self):
         return f"площадь прямоугольника равна: {self.side1 * 2 + self.side2 * 2}"
+    
+class Round:
+    def __init__(self,radius):
+        self.radius = radius
 
 
