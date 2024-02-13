@@ -9,4 +9,6 @@ class Square:
     def area(self):
         return f"площадь квадрата равна: {self.side ** 2}"
     
-    
+    def perimetr(self):
+        return f"периметр квадрата равен: {self.side * 4}"
+
