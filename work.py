@@ -29,4 +29,7 @@ class Round:
 
     def area(self):
         return f"площадь круга равна: {math.pi * (self.radius ** 2)}"
+    
+    def lenth(self):
+        return f"длина круга равна: {2 * math.pi * self.radius}"
 
