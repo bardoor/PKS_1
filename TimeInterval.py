@@ -15,3 +15,13 @@ class TimeInterval:
         minutes = (self.seconds - hours * 3600) // 60
         seconds = self.seconds - hours * 3600 - minutes * 60
         return f"В данном промежутке времени есть {hours} часов, {minutes} минут, {seconds} секунд"
+    
+    def __eq__(self, other) -> bool:
+        if self.seconds == other.seconds:
+            return True
+        return False
+    
+    def __ne__(self, other) -> bool:
+        if self.seconds != other.seconds:
+            return True
+        return False
