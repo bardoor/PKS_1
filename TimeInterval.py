@@ -48,3 +48,6 @@ class TimeInterval:
     
     def get_time_interval_in_nanoseconds(self) -> int:
         return self.seconds * 1000000000
+    
+    def get_time_interval_in_seconds(self) -> int:
+        return self.seconds
