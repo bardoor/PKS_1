@@ -27,4 +27,6 @@ class Round:
     def __init__(self,radius):
         self.radius = radius
 
+    def area(self):
+        return f"площадь круга равна: {math.pi * (self.radius ** 2)}"
 
