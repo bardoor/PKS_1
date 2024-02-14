@@ -35,3 +35,5 @@ class Circle:  # Круг
 
 class TimeInterval:
     seconds: int
+    def __init__(self, seconds, minutes=0, hours = 0) -> None:
+        self.seconds = seconds + minutes * 60 + hours * 3600
