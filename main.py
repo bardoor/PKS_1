@@ -16,10 +16,10 @@ class Rectangle:
         self.first_side_length = first_side_length
         self.second_side_length = second_side_length
 
-    def find_S(self) -> float:
+    def find_area(self) -> float:
         return (self.first_side_length * self.second_side_length)
     
-    def find_P(self) -> float:
+    def find_perimeter(self) -> float:
         return (self.first_side_length + self.second_side_length) * 2
     
 
