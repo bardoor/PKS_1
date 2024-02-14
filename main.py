@@ -34,6 +34,9 @@ class Circle:
     def __init__(self, radius_length: float) -> None:
         self.radius_length = radius_length
 
+    def get_radius_length(self) -> float:
+        return self.radius_length
+
     def find_area(self) -> float:
         π = 3.14
         return π * (self.radius_length ** 2)
