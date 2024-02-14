@@ -32,3 +32,6 @@ class Circle:  # Круг
 
     def find_perimeter(self) -> float:
         return 2 * math.pi * self.radius
+
+class TimeInterval:
+    seconds: int
