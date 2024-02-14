@@ -70,3 +70,9 @@ class TimeInterval:
         if self.seconds > other.seconds:
             return True
         return False
+
+    def __str__(self) -> str:
+        hours = time_in_hours(self)
+        minutes = time_in_minutes(self)
+        seconds = time_in_seconds(self)
+        return f"В данном Интервале Времени есть {seconds} секунд, {minutes} минут, {hours} часов!"
