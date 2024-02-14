@@ -37,3 +37,12 @@ class TimeInterval:
     seconds: int
     def __init__(self, seconds, minutes=0, hours = 0) -> None:
         self.seconds = seconds + minutes * 60 + hours * 3600
+    
+    def time_in_seconds(self) -> int:
+        return self.seconds
+
+    def time_in_minutes(self) -> float:
+        return self.seconds / 60
+
+    def time_in_hours(self) -> float:
+        return self.seconds / 3600
