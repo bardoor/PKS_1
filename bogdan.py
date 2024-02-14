@@ -46,3 +46,9 @@ class TimeInterval:
 
     def time_in_hours(self) -> float:
         return self.seconds / 3600
+
+    def __add__(self, other):
+        return self.seconds + other.seconds
+
+    def __sub__(self, other):
+        return self.seconds - other.seconds
