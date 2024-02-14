@@ -52,3 +52,21 @@ class TimeInterval:
 
     def __sub__(self, other):
         return self.seconds - other.seconds
+
+    def __eq__(self, other) -> bool:
+        if self.seconds == other.seconds:
+            return True
+        return False
+
+    def __ne__(self, other) -> bool:
+        return not(__eq__(self))
+
+    def __lt__(self, other) -> bool:
+        if self.seconds < other.seconds:
+            return True
+        return False
+
+    def __gt__(self, other) -> bool:
+        if self.seconds > other.seconds:
+            return True
+        return False
