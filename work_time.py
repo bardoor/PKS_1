@@ -14,3 +14,6 @@ class TimeInterval:
         seconds = self.seconds - hours * 3600 - minuts * 60
 
         return f"{hours}:{minuts}:{seconds}"
+    
+    def __eq__(self, other) -> bool:
+        return self.get_in_seconds() == other.get_in_seconds()
