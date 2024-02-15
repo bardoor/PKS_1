@@ -20,3 +20,6 @@ class TimeInterval:
     
     def __ne__(self,other) -> bool:
         return not (self.get_in_seconds() == other.get_in_seconds())
+    
+    def __gt__(self, other) -> bool:
+        return self.get_in_seconds() > other.get_in_seconds()
