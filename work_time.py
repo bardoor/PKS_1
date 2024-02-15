@@ -23,3 +23,6 @@ class TimeInterval:
     
     def __gt__(self, other) -> bool:
         return self.get_in_seconds() > other.get_in_seconds()
+    
+    def __lt__(self, other) -> bool:
+        return self.get_in_seconds() < other.get_in_seconds()
