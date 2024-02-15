@@ -26,3 +26,6 @@ class TimeInterval:
     
     def __lt__(self, other) -> bool:
         return self.get_in_seconds() < other.get_in_seconds()
+    
+    def __add__(self, other) -> bool:
+        return self.get_in_seconds() + other.get_in_seconds()
