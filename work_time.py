@@ -29,3 +29,6 @@ class TimeInterval:
     
     def __add__(self, other) -> bool:
         return self.get_in_seconds() + other.get_in_seconds()
+    
+    def __sub__(self, other):
+        return self.get_in_seconds() - other.get_in_seconds()
