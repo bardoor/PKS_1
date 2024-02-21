@@ -3,12 +3,20 @@ class Square:
 		self.side = side
 
 	def sey_square(self):
-		return f"Площадь квадрата >> {int(self.side) ** 2}"
+		return f"Площадь квадрата >> {self.side ** 2}"
 
 	def sey_perimeter(self):
-		return f"Периметр квадрата >> {int(self.side) * 4}"
+		return f"Периметр квадрата >> {self.side * 4}"
 
 
+class Rectangle:
+	def __init__(self, side_a, side_b):
+		self.a = side_a
+		self.b = side_b
+
+	def sey_square(self):
+		return f"Площадь прямоугольника >> {self.a * self.b}"
+		
 
 def rectangle(a,b):
 	print("Площадь >> ",a*b)
