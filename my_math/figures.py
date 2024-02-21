@@ -1,12 +1,14 @@
-class Квадрат:
-	def __init__(self, age):
-		self.age = age
+class Square:
+	def __init__(self, side):
+		self.side = side
 
-	def sey_площадь(self):
-		return f"Площадь квадрата >> {int(self.age) ** 2}"
+	def sey_square(self):
+		return f"Площадь квадрата >> {int(self.side) ** 2}"
 
-	def sey_периметр(self):
-		return f"Периметр квадрата >> {int(self.age) * 4}"
+	def sey_perimeter(self):
+		return f"Периметр квадрата >> {int(self.side) * 4}"
+
+
 
 def rectangle(a,b):
 	print("Площадь >> ",a*b)
