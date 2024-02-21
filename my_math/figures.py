@@ -27,5 +27,5 @@ class Circle:
 	def sey_square(self):
 		return f"Площадь круга >> {3.14 * self.radius ** 2}"
 
-	#print("Площадь >> ",3.14*r**2)
-	#print("Периметр >> ",2 * 3,14 * r)
+	def sey_perimeter(self):
+		return f"Периметр круга >> {2 * 3.14 * self.radius}"
