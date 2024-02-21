@@ -17,6 +17,8 @@ class Rectangle:
 	def sey_square(self):
 		return f"Площадь прямоугольника >> {self.a * self.b}"
 		
+	def sey_perimeter(self):
+		return f"Периметр прямоугольника >> {(self.a + self.b) * 2}"
 
 def rectangle(a,b):
 	print("Площадь >> ",a*b)
