@@ -20,9 +20,7 @@ class Rectangle:
 	def sey_perimeter(self):
 		return f"Периметр прямоугольника >> {(self.a + self.b) * 2}"
 
-def rectangle(a,b):
-	print("Площадь >> ",a*b)
-	print("Периметр >> ",a*2+b*2)
+
 def circle(r):
 	print("Площадь >> ",3.14*r**2)
 	print("Периметр >> ",2 * 3,14 * r)
