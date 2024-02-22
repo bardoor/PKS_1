@@ -27,3 +27,6 @@ class Clock:
     
     def get_minutes(self) -> int:
         return self.__minutes
+    
+    def __str__(self) -> str:
+        return f"{self.__hours}:{self.__minutes}"
