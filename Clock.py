@@ -21,3 +21,6 @@ class Clock:
     def set_hours_and_minutes(self, hours: int, minutes: int) -> None:
         self.set_hours(hours)
         self.set_minutes(minutes)
+    
+    def get_hours(self) -> int:
+        return self.__hours
