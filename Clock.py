@@ -9,3 +9,7 @@ class Clock:
         if not(0 <= minutes <= 59):
             minutes = 0
         self.__minutes = minutes
+
+    def set_hours(self, hours: int) -> None:
+        if 0 <= hours <= 23:
+            self.__hours = hours
