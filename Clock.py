@@ -13,3 +13,7 @@ class Clock:
     def set_hours(self, hours: int) -> None:
         if 0 <= hours <= 23:
             self.__hours = hours
+
+    def set_minutes(self, minutes: int) -> None:
+        if 0 <= minutes <= 59:
+            self.__minutes = minutes
