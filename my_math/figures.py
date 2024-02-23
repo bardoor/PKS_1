@@ -1,12 +1,12 @@
 class Square:
-	def __init__(self, side):
-		self.side = side
+    def __init__(self, side):
+        self.side = side
 
-	def sey_square(self):
-		return f"Площадь квадрата >> {self.side ** 2}"
+    def sey_square(self):
+        return self.side ** 2
 
-	def sey_perimeter(self):
-		return f"Периметр квадрата >> {self.side * 4}"
+    def sey_perimeter(self):
+        return self.side * 4
 
 
 class Rectangle:
@@ -15,17 +15,17 @@ class Rectangle:
 		self.b = side_b
 
 	def sey_square(self):
-		return f"Площадь прямоугольника >> {self.a * self.b}"
+		return self.a * self.b
 		
 	def sey_perimeter(self):
-		return f"Периметр прямоугольника >> {(self.a + self.b) * 2}"
+		return (self.a + self.b) * 2
 
 class Circle:
 	def __init__(self, radius):
 		self.radius = radius
 
 	def sey_square(self):
-		return f"Площадь круга >> {3.14 * self.radius ** 2}"
+		return 3.14 * self.radius ** 2
 
 	def sey_perimeter(self):
-		return f"Периметр круга >> {2 * 3.14 * self.radius}"
+		return 2 * 3.14 * self.radius
