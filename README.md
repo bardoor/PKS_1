@@ -8,6 +8,7 @@
 * [Объектно-ориентированное программирование: на пальцах](https://thecode.media/objective)
 * [Гайд по командам в bash (git bash поддерживает многие эти команды)](https://habr.com/ru/companies/ruvds/articles/445270/)
 * [Руководство по написанию чистого и читаемого кода на Python](https://egorovegor.ru/python-pep8/)
+* [Что такое класс?](https://github.com/bardoor/PKS_1/blob/main/books/Vaysfeld_M_-_Obektno-orientirovannoe_myshleni.pdf) **стр. 33-35**
 
 # Домашнее задание к 28 февраля
 Домашнее задание на 28 февраля:
