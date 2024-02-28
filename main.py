@@ -18,3 +18,5 @@ class Rectangle:
     def Rectangle_square(self):
         return(self.one_side_rectangle * self.two_side_rectangle)
 class Circle:
+     def init(self , radius_circle: float):
+        self.radius_circle = radius_circle
