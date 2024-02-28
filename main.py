@@ -8,3 +8,6 @@ class Square:
     def Square_square(self):
         return(self.side_square * 2)
 class Rectangle:
+    def init(self , one_side_rectangle:float , two_side_rectangle:float):
+        self.one_side_rectangle = one_side_rectangle
+        self.two_side_rectangle = two_side_rectangle
