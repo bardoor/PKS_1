@@ -21,3 +21,9 @@ class Rectangle:
 class Circle:
      def init(self , radius_circle: float):
         self.radius_circle = radius_circle
+        
+     def Circle_perimeter(self):
+        return (math.pi * 2 * self.radius_circle)
+
+    def Circle_square(self):
+        return ((self.radius_circle ** 2 )* math.pi)
