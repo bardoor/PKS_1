@@ -11,3 +11,9 @@ class Rectangle:
     def init(self , one_side_rectangle:float , two_side_rectangle:float):
         self.one_side_rectangle = one_side_rectangle
         self.two_side_rectangle = two_side_rectangle
+        
+    def Rectangle_perimeter(self):
+        return((self.one_side_rectangle + self.two_side_rectangle) * 2)
+
+    def Rectangle_square(self):
+        return(self.one_side_rectangle * self.two_side_rectangle)
