@@ -2,6 +2,8 @@ class TimeInterval:
     seconds: int
 
     def __init__(self, seconds: int=0, minutes: int=0, hours: int=0) -> None:
+        if not(seconds >= 0 and minutes >= 0 and hours >= 0):
+            raise RuntimeError("Warning! Hours, minutes, seconds must be greater than or equal to 0")
         self.seconds = seconds + minutes * 60 + hours * 3600
 
     def __add__(self, other):
