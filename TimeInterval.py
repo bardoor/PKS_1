@@ -6,28 +6,30 @@ class TimeInterval:
             raise RuntimeError("Warning! Hours, minutes, seconds must be greater than or equal to 0")
         self.seconds = seconds + minutes * 60 + hours * 3600
 
-    def __add__(self, other):
+    def __add__(self, other: 'TimeInterval') -> 'TimeInterval':
         return TimeInterval(self.seconds + other.seconds)
 
-    def __sub__(self, other):
+    def __sub__(self, other: 'TimeInterval') -> 'TimeInterval':
+        if self.seconds < other.seconds:
+            raise RuntimeError("Warning! Time interval cannot be less than 0")
         return TimeInterval(self.seconds - other.seconds)
     
-    def __eq__(self, other) -> bool:
+    def __eq__(self, other: 'TimeInterval') -> bool:
         return self.seconds == other.seconds
     
-    def __ne__(self, other) -> bool:
+    def __ne__(self, other: 'TimeInterval') -> bool:
         return self.seconds != other.seconds
     
-    def __lt__(self, other) -> bool:
+    def __lt__(self, other: 'TimeInterval') -> bool:
         return self.seconds < other.seconds
 
-    def __gt__(self, other) -> bool:
+    def __gt__(self, other: 'TimeInterval') -> bool:
         return self.seconds > other.seconds
     
-    def __le__(self, other) -> bool:
+    def __le__(self, other: 'TimeInterval') -> bool:
         return self.seconds <= other.seconds
 
-    def __ge__(self, other) -> bool:
+    def __ge__(self, other: 'TimeInterval') -> bool:
         return self.seconds >= other.seconds
     
     def get_time_interval_in_nanoseconds(self) -> int:
