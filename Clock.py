@@ -11,12 +11,14 @@ class Clock:
         self.__minutes = minutes
 
     def set_hours(self, hours: int) -> None:
-        if 0 <= hours <= 23:
-            self.__hours = hours
+        if not(0 <= hours <= 23):
+            raise RuntimeError("Warning! Before setting hours, check if 0 <= hours <= 23")
+        self.__hours = hours
 
     def set_minutes(self, minutes: int) -> None:
-        if 0 <= minutes <= 59:
-            self.__minutes = minutes
+        if not(0 <= minutes <= 59):
+            raise RuntimeError("Warning! Before setting minutes, check if 0 <= minutes <= 59")
+        self.__minutes = minutes
 
     def set_hours_and_minutes(self, hours: int, minutes: int) -> None:
         self.set_hours(hours)
