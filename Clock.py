@@ -19,3 +19,11 @@ class Clock:
         if not(0 <= minutes >= 59):
             raise RunTimeError('invalid value, the number of minutes must fall in the range from 0 to 59 inclusive')
         self.__minutes = minutes
+
+    def get_hours(self):
+        return self.__hour
+
+    def get_minutes(self):
+        return self.__minutes
+
+    
