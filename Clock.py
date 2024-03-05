@@ -9,3 +9,13 @@ class Clock:
         if not(0 <= __minutes >= 59)
             raise RunTimeError('invalid value, the number of minutes must fall in the range from 0 to 59 inclusive')
         self.__minutes = __minutes
+
+    def set_hours(self, hours:int):
+        if not(0 <= hours >= 23):
+            raise RunTimeError('invalid value, the number of hours must fall in the range from 0 to 23 inclusive')
+        self.__hour = hour
+
+    def set_minutes(self, minutes:int):
+        if not(0 <= minutes >= 59):
+            raise RunTimeError('invalid value, the number of minutes must fall in the range from 0 to 59 inclusive')
+        self.__minutes = minutes
