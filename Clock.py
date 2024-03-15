@@ -23,3 +23,8 @@ class Clock:
 
     def __str__(self):
         return f'{self.__hours}:{self.__minutes}'
+
+    def get_hours(self):
+        return self.__hours
+
+    
