@@ -20,3 +20,6 @@ class Clock:
         if not (0 <= minutes <= 59.9):
             raise RuntimeError("Ошибка. Неправильный ввод Минут!")
         self.__minutes = minutes
+
+    def __str__(self):
+        return f'{self.__hours}:{self.__minutes}'
