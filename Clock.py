@@ -27,4 +27,7 @@ class Clock:
     def get_hours(self):
         return self.__hours
 
+    def get_minutes(self):
+        return self.__minute
+
     
