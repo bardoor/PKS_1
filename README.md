@@ -9,6 +9,7 @@
 * [Гайд по командам в bash (git bash поддерживает многие эти команды)](https://habr.com/ru/companies/ruvds/articles/445270/)
 * [Руководство по написанию чистого и читаемого кода на Python](https://egorovegor.ru/python-pep8/)
 * [Что такое класс?](https://github.com/bardoor/PKS_1/blob/main/books/Vaysfeld_M_-_Obektno-orientirovannoe_myshleni.pdf) **стр. 33-35**
+* [Наследование](https://github.com/bardoor/PKS_1/blob/main/books/Vaysfeld_M_-_Obektno-orientirovannoe_myshleni.pdf) **стр. 40-43**
 
 # Домашнее задание к 6 марта:
 Необходимо добавить в класс **Clock** обработку исключений
