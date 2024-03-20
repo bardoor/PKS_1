@@ -197,3 +197,6 @@ class Game:
             print("<<Вы победили!")
         else:
             print("<<Вы проиграли!")
+
+    def is_game_end(self) -> bool:
+        return len(self.__monsters) == 0 or not self.__hero.is_alive()
