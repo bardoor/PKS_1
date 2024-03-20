@@ -66,3 +66,11 @@ class DamageAbility(Ability):
 
     def __str__(self) -> str:
         return f"{self._name} - способность, сносит у противника: {self.__damage} хп"
+    
+
+class HealAbility(Ability):
+    __heal_points: int
+
+    def __init__(self, name: str, heal_points: int) -> None:
+        super().__init__(name)
+        self.__heal_points = heal_points
