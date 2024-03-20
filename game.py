@@ -20,6 +20,11 @@ class Creature(ABC):
             raise RuntimeError("Урон не может быть отрицательным")
         self._hp -= damage
 
+    def take_heal(self, heal: int) -> None:
+        if heal < 0:
+            raise RuntimeError("Хил не может быть отрицательным")
+        self._hp += heal
+
     def get_hp(self) -> int:
         return self._hp
 
@@ -74,3 +79,9 @@ class HealAbility(Ability):
     def __init__(self, name: str, heal_points: int) -> None:
         super().__init__(name)
         self.__heal_points = heal_points
+
+    def use(self, ability_user: Creature) -> None:
+        ability_user.take_heal(self.__heal_points)
+
+    def __str__(self) -> str:
+        return f"{self._name} - способность, исцеляет у владельца: {self.__heal_points} хп"
