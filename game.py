@@ -212,3 +212,33 @@ class Game:
             else:
                 print(f"<<У {monster.get_name()} осталось {monster.get_hp()} очков здоровья\n")
                 self.__monster_action(monster)
+
+    def __hero_action(self, monster: Monster) -> bool:
+        action_choice = input("<<1)Удар \n<<2)Способность\n>>")
+
+        if action_choice == '1':
+            self.__hero.hit(monster)
+            print("<<Неплохой удар!")
+        elif action_choice == '2':
+            hero_abilities = self.__hero.get_abilities()
+            if len(hero_abilities) == 0:
+                print("<<У героя нет способностей")
+                return False
+            ability_choice = input(f"{self.__hero.show_abilities()}>>")
+            if not(ability_choice.isdigit()):
+                print("<<Вы можете ввести только целое число, попробуйте еще раз")
+                return False
+            ability_choice = int(ability_choice)
+            if ability_choice > len(hero_abilities) or ability_choice == 0:
+                print("<<Вы не можете ввести это число, попробуйте еще раз")
+                return False
+            ability = hero_abilities[ability_choice - 1]
+            if isinstance(ability, DamageAbility) or isinstance(ability, DebuffAbility):
+                self.__hero.use_ability(ability, monster)
+            elif isinstance(ability, HealAbility) or isinstance(ability, BuffAbility):
+                self.__hero.use_ability(ability, self.__hero)
+            print(f"<<Успешная активация способности: ({ability})")
+        else:
+            print("<<Нет такого варианта, попробуйте еще раз")
+            return False
+        return True
