@@ -28,3 +28,6 @@ class Creature(ABC):
 
     def is_alive(self) -> bool:
         return self._hp > 0
+    
+    def __str__(self) -> None:
+        pass
