@@ -60,3 +60,9 @@ class DamageAbility(Ability):
     def __init__(self, name: str, damage: int) -> None:
         super().__init__(name)
         self.__damage = damage
+
+    def use(self, enemy: 'Monster') -> None:
+        enemy.take_damage(self.__damage)
+
+    def __str__(self) -> str:
+        return f"{self._name} - способность, сносит у противника: {self.__damage} хп"
