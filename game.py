@@ -46,3 +46,9 @@ class Ability(ABC):
 
     def __init__(self, name: str) -> None:
         self._name = name
+
+    def use(self) -> None:
+        pass
+
+    def __str__(self) -> None:
+        pass
