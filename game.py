@@ -146,3 +146,9 @@ class Hero(Creature):
         for i in range(len(self.__abilities)):
             result += f"<<{i + 1}){self.__abilities[i]}\n"
         return result
+
+    def get_abilities(self) -> list[Ability]:
+        return self.__abilities
+
+    def __str__(self) -> str:
+        return f"Герой {self._name} с {self._hp} hp и с силой: {self._strength}"
