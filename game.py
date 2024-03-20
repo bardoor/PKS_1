@@ -31,3 +31,8 @@ class Creature(ABC):
     
     def __str__(self) -> None:
         pass
+
+
+class Monster(Creature):
+    def __init__(self, name: str, hp: int=50, strength: int=1) -> None:
+        super().__init__(name, hp, strength)
