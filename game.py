@@ -85,3 +85,11 @@ class HealAbility(Ability):
 
     def __str__(self) -> str:
         return f"{self._name} - способность, исцеляет у владельца: {self.__heal_points} хп"
+
+
+class DebuffAbility(Ability):
+    __debuff_index: float
+
+    def __init__(self, name: str, debuff_index: float) -> None:
+        super().__init__(name)
+        self.__debuff_index = debuff_index
