@@ -134,3 +134,7 @@ class Hero(Creature):
             self.__abilities = []
         else:
             self.__abilities = abilities
+
+    def use_ability(self, ability: Ability, target: Creature) -> None:
+        if ability in self.__abilities:
+            ability.use(target)
