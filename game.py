@@ -138,3 +138,11 @@ class Hero(Creature):
     def use_ability(self, ability: Ability, target: Creature) -> None:
         if ability in self.__abilities:
             ability.use(target)
+
+    def show_abilities(self) -> str:
+        if len(self.__abilities) == 0:
+            return "<<У Героя нет способностей"
+        result = ""
+        for i in range(len(self.__abilities)):
+            result += f"<<{i + 1}){self.__abilities[i]}\n"
+        return result
