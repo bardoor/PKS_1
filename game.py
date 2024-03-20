@@ -19,3 +19,12 @@ class Creature(ABC):
         if damage < 0:
             raise RuntimeError("Урон не может быть отрицательным")
         self._hp -= damage
+
+    def get_hp(self) -> int:
+        return self._hp
+
+    def get_name(self) -> str:
+        return self._name
+
+    def is_alive(self) -> bool:
+        return self._hp > 0
