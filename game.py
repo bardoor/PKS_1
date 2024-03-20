@@ -165,3 +165,35 @@ class Game:
                           DebuffAbility("Ты всего лишь часть исполняемого кода!", 0.5)]
         self.__hero = Hero(name="Поликарп Незыблемый", abilities=hero_abilities)
         self.__monsters = [Monster("Худющий гоблин", 10, 1), Monster("Старый дракон", 100, 3), Monster("Мощнейший комар", 150, 10)]
+
+    def game_loop(self) -> None:
+        game_end = False
+
+        print(f"<<{self.__hero} - готов к путешествию!")
+
+        while not game_end:
+            player_choice = input(
+            "<<Перед вами развилка. Куда идти?\n"
+            "<<1)Направо\n"
+            "<<2)Налево\n"
+            "<<3)Прямо\n"
+            ">>")
+            if player_choice not in ('1', '2', '3'):
+                print("<<Ну раз не хочешь выбирать...")
+                print("<<Тогда пойдем " + random.choice(('направо', 'налево', 'прямо')))
+
+            if random.randint(0, 1) == 1:
+                monster = random.choice(self.__monsters)
+                print(f"<<Перед вами {monster}\n")
+                self.__battle(monster)
+                if not monster.is_alive():
+                    self.__monsters.remove(monster)
+            else:
+                print("<<Никого нет!\n")
+
+            game_end = self.is_game_end()
+
+        if self.__hero.is_alive():
+            print("<<Вы победили!")
+        else:
+            print("<<Вы проиграли!")
