@@ -104,3 +104,11 @@ class DebuffAbility(Ability):
 
     def __str__(self) -> str:
         return f"{self._name} - способность, позволяющая понизить силу врага, коэфф.: {self.__debuff_index}"
+    
+
+class BuffAbility(Ability):
+    __buff_index: float
+
+    def __init__(self, name: str, buff_index: float) -> None:
+        super().__init__(name)
+        self.__buff_index = buff_index
