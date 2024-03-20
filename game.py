@@ -39,3 +39,10 @@ class Monster(Creature):
 
     def __str__(self) -> str:
         return f"Монстр {self._name} с {self._hp} hp и силой {self._strength}"
+    
+
+class Ability(ABC):
+    _name: str
+
+    def __init__(self, name: str) -> None:
+        self._name = name
