@@ -200,3 +200,15 @@ class Game:
 
     def is_game_end(self) -> bool:
         return len(self.__monsters) == 0 or not self.__hero.is_alive()
+    
+    def __battle(self, monster: Monster) -> None:
+        while self.__hero.is_alive() and monster.is_alive():
+            print(f"<<У {self.__hero.get_name()} осталось {self.__hero.get_hp()} hp\n")
+            if not(self.__hero_action(monster)):
+                continue
+
+            if not monster.is_alive():
+                print(f"<<{monster.get_name()} убит!\n")
+            else:
+                print(f"<<У {monster.get_name()} осталось {monster.get_hp()} очков здоровья\n")
+                self.__monster_action(monster)
