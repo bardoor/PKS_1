@@ -52,3 +52,11 @@ class Ability(ABC):
 
     def __str__(self) -> None:
         pass
+
+
+class DamageAbility(Ability):
+    __damage: int
+
+    def __init__(self, name: str, damage: int) -> None:
+        super().__init__(name)
+        self.__damage = damage
