@@ -152,3 +152,16 @@ class Hero(Creature):
 
     def __str__(self) -> str:
         return f"Герой {self._name} с {self._hp} hp и с силой: {self._strength}"
+
+
+class Game:
+    __hero: Hero
+    __monsters: list[Monster]
+
+    def __init__(self) -> None:
+        hero_abilities = [DamageAbility("Чихнуть", 10), 
+                          HealAbility("О! Пирожок в кармане :)", 20), 
+                          BuffAbility("СДАЙ ЕГЭ! Ты сейчас возьмешь и сдашь ЕГЭ!", 3), 
+                          DebuffAbility("Ты всего лишь часть исполняемого кода!", 0.5)]
+        self.__hero = Hero(name="Поликарп Незыблемый", abilities=hero_abilities)
+        self.__monsters = [Monster("Худющий гоблин", 10, 1), Monster("Старый дракон", 100, 3), Monster("Мощнейший комар", 150, 10)]
