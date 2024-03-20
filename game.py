@@ -36,3 +36,6 @@ class Creature(ABC):
 class Monster(Creature):
     def __init__(self, name: str, hp: int=50, strength: int=1) -> None:
         super().__init__(name, hp, strength)
+
+    def __str__(self) -> str:
+        return f"Монстр {self._name} с {self._hp} hp и силой {self._strength}"
