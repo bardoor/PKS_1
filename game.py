@@ -30,6 +30,11 @@ class Creature(ABC):
             raise RuntimeError("Дебафф не может быть баффом или быть отрицательным")
         self._strength *= debuff_index
 
+    def take_buff(self, buff_index: float) -> None:
+        if buff_index < 1:
+            raise RuntimeError("Бафф не может быть дебаффом")
+        self._strength *= buff_index
+
     def get_hp(self) -> int:
         return self._hp
 
@@ -112,3 +117,9 @@ class BuffAbility(Ability):
     def __init__(self, name: str, buff_index: float) -> None:
         super().__init__(name)
         self.__buff_index = buff_index
+
+    def use(self, ability_user: Creature) -> None:
+        ability_user.take_buff(self.__buff_index)
+
+    def __str__(self) -> str:
+        return f"{self._name} - способность, позволяющая увеличить силу владельца, коэфф.: {self.__buff_index}"
