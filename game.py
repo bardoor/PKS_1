@@ -25,6 +25,11 @@ class Creature(ABC):
             raise RuntimeError("Хил не может быть отрицательным")
         self._hp += heal
 
+    def take_debuff(self, debuff_index: float) -> None:
+        if debuff_index <= 0 or debuff_index > 1:
+            raise RuntimeError("Дебафф не может быть баффом или быть отрицательным")
+        self._strength *= debuff_index
+
     def get_hp(self) -> int:
         return self._hp
 
@@ -93,3 +98,9 @@ class DebuffAbility(Ability):
     def __init__(self, name: str, debuff_index: float) -> None:
         super().__init__(name)
         self.__debuff_index = debuff_index
+
+    def use(self, enemy: Monster) -> None:
+        enemy.take_debuff(self.__debuff_index)
+
+    def __str__(self) -> str:
+        return f"{self._name} - способность, позволяющая понизить силу врага, коэфф.: {self.__debuff_index}"
