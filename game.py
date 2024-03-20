@@ -123,3 +123,14 @@ class BuffAbility(Ability):
 
     def __str__(self) -> str:
         return f"{self._name} - способность, позволяющая увеличить силу владельца, коэфф.: {self.__buff_index}"
+
+
+class Hero(Creature):
+    __abilities: list[Ability]
+
+    def __init__(self, name: str, hp: int=100, strength: int=5, abilities=None) -> None:
+        super().__init__(name, hp, strength)
+        if abilities is None:
+            self.__abilities = []
+        else:
+            self.__abilities = abilities
