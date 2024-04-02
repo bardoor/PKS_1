@@ -41,3 +41,8 @@ class Motherboard:
         self.__processor = Processor()
     def can_run(self, process):
         pass
+
+class Ram:
+    _is_volume: bool
+    def get_value(self):
+        pass
