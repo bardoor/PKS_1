@@ -19,3 +19,12 @@ class Computer:
         pass
     def turn_off_system(self):
         pass
+
+class Process:
+    _mulstaking: str
+    def input_videocard(self, power):
+        pass
+    def input_processor(self, power):
+        pass
+    def input_ram(self, volume):
+        pass
