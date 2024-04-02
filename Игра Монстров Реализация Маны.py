@@ -81,3 +81,79 @@ class Hero(Creature):
 
     def __str__(self):
         return f"Герой {self._name} с {self.get_hp()} hp"
+
+class Game:
+    def __init__(self):
+        hero_abilities = [Ability("Чихнуть", 10,1),
+                          Ability("Ударить сильно прям", 20,1),
+                          Ability("Плюнуть Кислоту", 30, 1),
+                          Ability("Взрывная Волна от Прыжка", 20,1)]
+        self.__hero = Hero(name="Поликарп Незыблемый", abilities=hero_abilities)
+        self.__monsters = [Monster("Худющий гоблин", 10, 1),
+                           Monster("Старый дракон", 100, 3),
+                           Monster("Мощнейший комар", 150, 10)]
+
+    def game_loop(self):
+        game_end = False
+
+        print(f"{self.__hero} готов к путешествию!")
+
+        while not game_end:
+            player_choice = int(input(
+            "Перед вами развилка. Куда идти?\n"
+            "1) Направо\n"
+            "2) Налево\n"
+            "3) Прямо\n"))
+
+            if random.randint(0, 1) == 1:
+                monster = random.choice(self.__monsters)
+                print(f"Перед вами {monster}\n")
+                self.__battle(monster)
+                if not monster.is_alive():
+                    self.__monsters.remove(monster)
+            else:
+                print("Монстра нет!\n")
+
+            game_end = self.is_game_end()
+
+        if self.__hero.is_alive():
+            print("Вы победили!")
+        else:
+            print("Вы проиграли!")
+
+
+    def is_game_end(self):
+        return len(self.__monsters) == 0 or not self.__hero.is_alive()
+
+    def __battle(self, monster: Monster):
+        while self.__hero.is_alive() and monster.is_alive():
+            print(f"У {self.__hero.get_name()} осталось {self.__hero.get_hp()} hp\n")
+            self.__hero_action(monster)
+
+            if not monster.is_alive():
+                print(f"{monster.get_name()} убит!\n")
+            else:
+                print(f"У {monster.get_name()} осталось {monster.get_hp()} очков здоровья\n")
+                self.__monster_action(monster)
+
+
+    def __hero_action(self, monster, mana):
+        action_choice = int(input("1) Удар \n2) Способность\n"))
+
+        if action_choice == 1:
+            self.__hero.hit(monster)
+        else:
+            if mana > 0:
+                ability_choice = int(input((self.__hero.show_abilities())))
+                hero_abilities = self.__hero.get_abilities()
+                # Опасная операция...
+                ability = hero_abilities[ability_choice - 1]
+                self.__hero.use_ability(ability, monster)
+                mana -= 1
+            elif mana == 0 or mana < 0:
+                return "У вас недостаточно Маны"
+
+    def __monster_action(self, monster):
+        hp_before_hit = self.__hero.get_hp()
+        monster.hit(self.__hero)
+        print(f"{monster.get_name()} ударил {self.__hero.get_name()} и нанёс {hp_before_hit - self.__hero.get_hp()} урона\n")
