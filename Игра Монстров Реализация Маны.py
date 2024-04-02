@@ -29,3 +29,10 @@ class Creature(ABC):
 
     def __str__(self):
         pass
+
+class Monster(Creature):
+    def __init__(self, name: str, hp=50, strength=1):
+        super().__init__(name, hp, strength)
+
+    def __str__(self):
+        return f"Монстр {self._name} с {self._hp} hp и силой {self._strength}"
