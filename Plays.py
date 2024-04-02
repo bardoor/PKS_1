@@ -139,3 +139,7 @@ class Game:
             self.__update()
             self.__draw()
             self.__clock.tick(self.__frame_rate)
+
+game = Game(WINDOW_WIDTH, WINDOW_HEIGHT, BACKGROUND_COLOR, FPS, CAPTION)
+game.run()
+pygame.quit()
