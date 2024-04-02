@@ -46,3 +46,8 @@ class Ram:
     _is_volume: bool
     def get_value(self):
         pass
+
+class Processor:
+    _is_power: bool
+    def get_power(self):
+        pass
