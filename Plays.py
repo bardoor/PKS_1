@@ -37,3 +37,19 @@ class Wheel:
     def move(self, offset_x: int, offset_y: int):
         self.__center_x += offset_x
         self.__center_y += offset_y
+
+class Body:
+    __rect: pygame.Rect
+    __color: (int, int, int)
+
+    def __init__(self, left_top_x: int, left_top_y: int, width: int, height: int, color: (int, int, int)):
+        self.__rect = pygame.Rect(left_top_x, left_top_y, width, height)
+        self.__color = color
+
+    def draw(self, surface: pygame.Surface):
+        pygame.draw.rect(surface, color=self.__color, rect=self.__rect)
+
+    def move(self, offset_x: int, offset_y: int):
+        # move_ip - move in place, то есть передвинуться в какое-либо место
+        # В качестве параметров принимается смещение относительно текущего положения
+        self.__rect.move_ip(offset_x, offset_y)
