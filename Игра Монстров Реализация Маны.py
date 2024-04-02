@@ -52,3 +52,32 @@ class Ability:
             target.take_damage(self.__damage)
         else:
             return "У вас недостаточно Маны"
+
+class Hero(Creature):
+    mana: int
+    def __init__(self, name: str, hp=100, strength=5, mana=10, abilities=None):
+        super().__init__(name, hp, strength, mana)
+        if abilities is None:
+            self.__abilities = []
+        else:
+            self.__abilities = abilities
+
+    def use_ability(self, ability: Ability, target: Creature, mana:int):
+        if mana > 0 and ability in self.__abilities:
+            ability.use(target)
+        else:
+            return "У вас недостаточно Маны"
+
+    # Возвращает строку с перечислением способностей героя
+    def show_abilities(self):
+        result = ""
+        for i in range(len(self.__abilities)):
+            result += f"{i + 1}) {self.__abilities[i]}\n"
+        return result
+
+    # Возвращает список способностей героя
+    def get_abilities(self):
+        return self.__abilities
+
+    def __str__(self):
+        return f"Герой {self._name} с {self.get_hp()} hp"
