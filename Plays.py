@@ -53,3 +53,40 @@ class Body:
         # move_ip - move in place, то есть передвинуться в какое-либо место
         # В качестве параметров принимается смещение относительно текущего положения
         self.__rect.move_ip(offset_x, offset_y)
+
+class Cart:
+    __body: Body
+    __wheels: [Wheel]
+
+    def __init__(self, left_top_x, left_top_y, width, height):
+        self.__speed = 10
+        body_height = 0.8 * height
+        body_color = (90, 90, 90)  # Серый
+        wheel_radius = 0.2 * height // 2
+        wheel_color = (0, 50, 100)  # Желтый
+        wheel_offset_x = 0.1 * width  # Смещение колеса относительно вертикальной границы вагонетки
+        wheel_center_y = 0.9 * height  # Координата y центра колёс
+
+        self.__body = Body(left_top_x, left_top_y, width, body_height, body_color)
+        self.__wheels = [
+            Wheel(wheel_offset_x, wheel_center_y, wheel_radius, wheel_color),
+            Wheel(width - wheel_offset_x, wheel_center_y, wheel_radius, wheel_color)
+        ]
+
+    def draw(self, surface: pygame.Surface):
+        self.__body.draw(surface)
+        for wheel in self.__wheels:
+            wheel.draw(surface)
+
+    def move(self, direction: int):
+        if direction == Direction.South:
+            offset_x, offset_y = 0, -self.__speed
+        elif direction == Direction.North:
+            offset_x, offset_y = 0, self.__speed
+        elif direction == Direction.East:
+            offset_x, offset_y = self.__speed, 0
+        elif direction == Direction.West:
+            offset_x, offset_y = -self.__speed, 0
+        self.__body.move(offset_x, offset_y)
+        for wheel in self.__wheels:
+            wheel.move(offset_x, offset_y)
