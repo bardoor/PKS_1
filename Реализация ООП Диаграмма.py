@@ -28,3 +28,16 @@ class Process:
         pass
     def input_ram(self, volume):
         pass
+
+class Motherboard:
+    __ram: Ram
+    __videocard: Videocard
+    __processor: Processor
+    is_mulstaking: void
+    binding: void
+    def __init__(self):
+        self.__ram = Ram()
+        self.__videocard = Videocard()
+        self.__processor = Processor()
+    def can_run(self, process):
+        pass
