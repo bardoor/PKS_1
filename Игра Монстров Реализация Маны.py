@@ -36,3 +36,19 @@ class Monster(Creature):
 
     def __str__(self):
         return f"Монстр {self._name} с {self._hp} hp и силой {self._strength}"
+
+
+class Ability:
+    def __init__(self, name: str, damage: int, mana: int):
+        self.__name = name
+        self.__damage = damage
+        self.__mana = mana
+
+    def __str__(self):
+        return f"{self.__name} - наносит {self.__damage} урона"
+
+    def use(self, target: Creature):
+        if mana > 0:
+            target.take_damage(self.__damage)
+        else:
+            return "У вас недостаточно Маны"
