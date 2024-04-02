@@ -51,3 +51,8 @@ class Processor:
     _is_power: bool
     def get_power(self):
         pass
+
+class Videocard:
+    _is_power: bool
+    def get_power(self):
+        pass
