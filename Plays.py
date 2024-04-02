@@ -90,3 +90,52 @@ class Cart:
         self.__body.move(offset_x, offset_y)
         for wheel in self.__wheels:
             wheel.move(offset_x, offset_y)
+
+class Game:
+    __screen: pygame.Surface
+    __background_color: (int, int, int)
+    __frame_rate: int
+    __clock: pygame.time.Clock
+    __is_running: bool
+    __cart: Cart
+
+    def __init__(self, width: int, height: int, background_color: (int, int, int), frame_rate: int, caption: str):
+        pygame.display.set_caption(caption)
+        self.__screen = pygame.display.set_mode((width, height))
+        self.__background_color = background_color
+        self.__frame_rate = frame_rate
+        self.__clock = pygame.time.Clock()
+        self.__is_running = True
+        self.__cart = Cart(0, 0, 200, 100)
+
+    def __handle_events(self):
+        events = pygame.event.get()
+        for event in events:
+            if event.type == pygame.QUIT:
+                self.__is_running = False
+            # Регистрируем нажатие на какую-либо клавишу
+            elif event.type == pygame.KEYDOWN:
+                # Если нажатая клавиша - стрелка вправо
+                if event.key == pygame.K_RIGHT:
+                    self.__cart.move(Direction.East)
+                elif event.key == pygame.K_LEFT:
+                    self.__cart.move(Direction.West)
+                elif event.key == pygame.K_UP:
+                    self.__cart.move(Direction.South)
+                elif event.key == pygame.K_DOWN:
+                    self.__cart.move(Direction.North)
+
+    def __update(self):
+        ...
+
+    def __draw(self):
+        self.__screen.fill(self.__background_color)
+        self.__cart.draw(self.__screen)
+        pygame.display.update()
+
+    def run(self):
+        while self.__is_running:
+            self.__handle_events()
+            self.__update()
+            self.__draw()
+            self.__clock.tick(self.__frame_rate)
