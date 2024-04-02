@@ -157,3 +157,7 @@ class Game:
         hp_before_hit = self.__hero.get_hp()
         monster.hit(self.__hero)
         print(f"{monster.get_name()} ударил {self.__hero.get_name()} и нанёс {hp_before_hit - self.__hero.get_hp()} урона\n")
+        
+if __name__ == "__main__":
+    game = Game()
+    game.game_loop()
