@@ -1,4 +1,6 @@
 def find_substr(big_str: str, little_str: str) -> None | int:
+    if not(isinstance(big_str, str) and isinstance(little_str, str)):
+        return None
     for big_str_symbol_index in range(len(big_str)):
         if big_str[big_str_symbol_index] == little_str[0]:
             we_got_correct_index = True
@@ -11,3 +13,10 @@ def find_substr(big_str: str, little_str: str) -> None | int:
                     break
             if we_got_correct_index:
                 return maybe_first_index_we_need
+            
+
+def test_not_str_in_params_in_find_substr() -> None:
+    first_param = []
+    second_param = 12
+    must_return = None
+    assert find_substr(first_param, second_param) == must_return, "В параметрах переданы не строки"
