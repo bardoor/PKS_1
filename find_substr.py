@@ -54,3 +54,10 @@ def test_part_of_second_str_in_first_str_in_find_substr() -> None:
     second_param = 'world'
     must_return = 22
     assert find_substr(first_param, second_param) == must_return, "Часть второй строки(не вся) засчиталась как вся вторая строка"
+
+test_not_str_in_params_in_find_substr()
+test_not_second_str_in_first_str_in_find_substr()
+test_second_str_in_first_str_twice_or_more_in_find_substr()
+test_first_str_is_empty_in_find_substr()
+test_second_str_is_empty_in_find_substr()
+test_part_of_second_str_in_first_str_in_find_substr()
