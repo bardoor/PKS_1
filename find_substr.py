@@ -28,3 +28,9 @@ def test_not_second_str_in_first_str_in_find_substr() -> None:
     second_param = '0'
     must_return = None
     assert find_substr(first_param, second_param) == must_return, "В первой строке нету второй"
+
+def test_second_str_in_first_str_twice_or_more_in_find_substr() -> None:
+    first_param = 'fava12facx12f'
+    second_param = '12'
+    must_return = 4
+    assert find_substr(first_param, second_param) == must_return, "В первой строке несколько вторых строк"
