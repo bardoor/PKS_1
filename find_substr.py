@@ -48,3 +48,9 @@ def test_second_str_is_empty_in_find_substr() -> None:
     second_param = ''
     must_return = -1
     assert find_substr(first_param, second_param) == must_return, "Вторая строка является пустой"
+
+def test_part_of_second_str_in_first_str_in_find_substr() -> None:
+    first_param = 'word worl workd otwjlkworldfkakjn'
+    second_param = 'world'
+    must_return = 22
+    assert find_substr(first_param, second_param) == must_return, "Часть второй строки(не вся) засчиталась как вся вторая строка"
